@@ -2,11 +2,18 @@
 
 ## users テーブル
 
-| Column   | Type   | Options                       |
-| -------- | ------ | ----------------------------- |
-| nickname | string | null: false                   |
-| email    | string | null: false, unique: true     |
-| password | string | null: false                   |
+| Column             | Type    | Options                       |
+| ------------------ | ------- | ----------------------------- |
+| nickname           | string  | null: false                   |
+| email              | string  | null: false, unique: true     |
+| password           | string  | null: false                   |
+| first_name         | string  | null: false                   |
+| last_name          | string  | null: false                   |
+| first_name_kana    | string  | null: false                   |
+| last_name_kana     | string  | null: false                   |
+| birthday_year_id   | integer | null: false                   | 
+| birthday_month_id  | integer | null: false                   | 
+| birthday_date_id   | integer | null: false                   | 
 
 ### Association
 
@@ -38,7 +45,6 @@
 | -------- | ---------- | ------------------------------ |
 | user     | references | null: false, foreign_key: true |
 | item     | references | null: false, foreign_key: true |
-| shipping | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -47,14 +53,15 @@
 
 ## shippings テーブル
 
-| Column        | Type     | Options     |
-| ------------- | -------- | ----------- |
-| postal_code   | integer  | null: false |
-| prefecture_id | string   | null: false |
-| cities        | string   | null: false |
-| address       | integer  | null: false |
-| building_name | string   |             |
-| phone_number  | integer  | null: false |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| postal_code   | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| cities        | string     | null: false                    |
+| address       | integer    | null: false                    |
+| building_name | string     |                                |
+| phone_number  | string     | null: false                    |
+| purchase      | references | null: false, foreign_key: true |
 
 ### Association
 
