@@ -7,13 +7,12 @@
 | nickname           | string  | null: false                   |
 | email              | string  | null: false, unique: true     |
 | password           | string  | null: false                   |
+| encrypted_password | string  | null: false                   |
 | first_name         | string  | null: false                   |
 | last_name          | string  | null: false                   |
 | first_name_kana    | string  | null: false                   |
 | last_name_kana     | string  | null: false                   |
-| birthday_year_id   | integer | null: false                   | 
-| birthday_month_id  | integer | null: false                   | 
-| birthday_date_id   | integer | null: false                   | 
+| birthday           | date    | null: false                   | 
 
 ### Association
 
@@ -58,7 +57,7 @@
 | postal_code   | string     | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | cities        | string     | null: false                    |
-| address       | integer    | null: false                    |
+| address       | string     | null: false                    |
 | building_name | string     |                                |
 | phone_number  | string     | null: false                    |
 | purchase      | references | null: false, foreign_key: true |
