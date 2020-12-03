@@ -12,5 +12,5 @@ class User < ApplicationRecord
     validates :birthday
   end
   validates :email, format: {with: /\A[a-z\d]+@.+/, message: "is Invalid. Input including @" }
-  validates :encrypted_password, format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "is Invalid. Input including half-width alphabets and numbers"}
+  validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "is Invalid. Input including half-width alphabets and numbers"}
 end
