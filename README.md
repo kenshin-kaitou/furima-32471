@@ -25,7 +25,7 @@
 | name                  | string     | null: false                    |
 | information           | text       | null: false                    |
 | price                 | integer    | null: false                    |
-| user                  | references | null: false, foreign_key: true |
+| user_id               | references | null: false, foreign_key: true |
 | state_id              | integer    | null: false                    |
 | category_id           | integer    | null: false 				      |
 | shipping_burden_id    | integer    | null: false                    |
