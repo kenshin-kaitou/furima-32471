@@ -97,14 +97,14 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Priceを入力してください')
       end
 
-      it 'priceが数値でなければ出品できないこと' do
-        @item.price = '３００'
+      it 'priceが半角数字でなければ出品できないこと' do
+        @item.price = ""
         @item.valid?
-        expect(@item.errors.full_messages).to include('Priceは数値で入力してください')
+        expect(@item.errors.full_messages).to include('Priceは半角数字で入力してください')
       end
 
       it 'priceの値が300未満では出品できないこと' do
-        @item.price = 200
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include('Priceは300以上の値にしてください')
       end
