@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :shipping_burden
   belongs_to :shipper_prefecture
-  belongs_to :shipping_day
+  belongs_to :shipping_days
   belongs_to :user
   has_one_attached :image
 
