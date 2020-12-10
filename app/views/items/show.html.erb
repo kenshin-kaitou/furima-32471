@@ -31,7 +31,7 @@
         <%= link_to '削除', item_path(@item), method: :delete, class:'item-destroy' %>
       <% else %>
       <%# 商品が売れていない場合はこちらを表示しましょう %>
-      <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
+      <%= link_to '購入画面に進む', item_purchases_path(@item) ,class:"item-red-btn"%>
       <%# //商品が売れていない場合はこちらを表示しましょう %>
       <% end %>
     <% end %>
@@ -103,7 +103,7 @@
       後ろの商品 ＞
     </a>
   </div>
-  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
+  <a href="#" class='another-item'><%= @item.category.name %>をもっと見る</a>
 </div>
 
 <%= render "shared/footer" %>
