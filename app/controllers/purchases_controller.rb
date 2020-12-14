@@ -2,7 +2,7 @@ class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   def index
     @item = Item.find(params[:item_id])
-    if @item.user == current_user
+    if @item.user == current_user || @item.purchase != nil
       redirect_to root_path
     end
     @purchase_shipping = PurchaseShipping.new
