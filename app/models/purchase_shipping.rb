@@ -9,6 +9,7 @@ class PurchaseShipping
 		validates :cities
 		validates :address
 		validates :phone_number, format: {with: /\A[0-9]{10,11}\z/}
+		validates :token
 	end
 
 	def save
