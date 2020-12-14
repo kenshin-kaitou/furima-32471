@@ -1,6 +1,9 @@
 class PurchasesController < ApplicationController
   def index
     @item = Item.find(params[:item_id])
+    if @item.user == current_user
+      redirect_to root_path
+    end
     @purchase_shipping = PurchaseShipping.new
 
   end

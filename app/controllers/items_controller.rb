@@ -50,8 +50,4 @@ class ItemsController < ApplicationController
   def get_item
     @item = Item.find(params[:id])
   end
-
-  def sold
-    
-  end
 end
