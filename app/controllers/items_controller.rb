@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    
   end
 
   def edit
@@ -48,5 +49,9 @@ class ItemsController < ApplicationController
 
   def get_item
     @item = Item.find(params[:id])
+  end
+
+  def sold
+    
   end
 end

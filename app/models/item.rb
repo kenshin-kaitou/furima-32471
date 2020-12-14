@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :state
   belongs_to :category
   belongs_to :shipping_burden
-  belongs_to :prefecture
+  belongs_to :shipper_prefecture
   belongs_to :shipping_days
   belongs_to :user
   has_one    :purchase
