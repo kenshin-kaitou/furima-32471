@@ -7,7 +7,7 @@ class PurchaseShipping
     validates :prefecture, numericality: { other_than: 1 }
     validates :cities
     validates :address
-    validates :phone_number, numericality: true
+	validates :phone_number, numericality: true, length: {maximum: 11}
     validates :token
     validates :user_id
     validates :item_id
