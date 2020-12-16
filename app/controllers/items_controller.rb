@@ -19,11 +19,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    
   end
 
   def edit
-    redirect_to root_path if @item.user != current_user
+    redirect_to root_path if @item.user != current_user || @item.purchase != nil
   end
 
   def update
@@ -35,7 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.user == current_user
+    if @item.user == current_user && @item.purchase == nil
       @item.destroy
     end
     redirect_to root_path

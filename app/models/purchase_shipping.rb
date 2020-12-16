@@ -1,15 +1,15 @@
 class PurchaseShipping
 	include ActiveModel::Model
-
-	attr_accessor :user_id, :item_id,:purchase_id, :postal_code, :prefecture, :cities, :address, :building_name, :phone_number, :token, :current_user
-
+	attr_accessor :user_id, :item_id,:purchase_id, :postal_code, :prefecture, :cities, :address, :building_name, :phone_number, :token,:user, :item
 	with_options presence: true do
-		validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "「-」を含めて入力してください" }
+		validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: "を正しく入力してください" }
 		validates :prefecture, numericality: {other_than: 1}
 		validates :cities
 		validates :address
-		validates :phone_number, format: {with: /\A[0-9]{10,11}\z/}
+		validates :phone_number, numericality: true
 		validates :token
+		validates :user_id
+		validates :item_id
 	end
 
 	def save
