@@ -76,6 +76,12 @@ RSpec.describe PurchaseShipping, type: :model do
         expect(@purchase_shipping.errors.full_messages).to include('Phone numberは数値で入力してください')
       end
 
+      it 'phone_numberは数値のみでないと購入できないこと' do
+        @purchase_shipping.phone_number = '1a2b3c4d5e6'
+        @purchase_shipping.valid?
+        expect(@purchase_shipping.errors.full_messages).to include('Phone numberは数値で入力してください')
+      end
+
       it 'phone_numberが11桁以内でなければ購入できないこと' do
         @purchase_shipping.phone_number = '012345678901'
         @purchase_shipping.valid?
