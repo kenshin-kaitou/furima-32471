@@ -1,5 +1,5 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!
   before_action :get_item
   def index
     @purchase_shipping = PurchaseShipping.new
@@ -10,7 +10,8 @@ class PurchasesController < ApplicationController
     @purchase_shipping = PurchaseShipping.new(purchase_params)
     if @purchase_shipping.valid?
       pay_item
-      redirect_to root_path if @purchase_shipping.save
+      @purchase_shipping.save
+      redirect_to root_path
     else
       render 'index'
     end
